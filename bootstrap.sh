@@ -12,7 +12,6 @@ su -l -c "psql -c 'CREATE EXTENSION adminpack;'" - postgres
 #createuser -d -E -i -l -r -s tilemill
 
 tee /etc/nginx/sites-enabled/default <<FOF
-
 server {
   listen 80;
   server_name localhost;
@@ -27,7 +26,6 @@ server {
     proxy_pass http://127.0.0.1:20009;
   }
 }
-
 FOF
 
 tee /etc/tilemill/tilemill.config <<FOF
