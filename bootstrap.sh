@@ -6,6 +6,12 @@ yes | apt-add-repository ppa:nginx/stable
 apt-get update --yes
 apt-get install --yes tilemill nginx-light postgresql-9.3-postgis-2.1 postgresql-contrib #fonts-cantarell lmodern ttf-aenigma ttf-georgewilliams ttf-bitstream-vera ttf-sjfonts ttf-tuffy tv-fonts ubuntustudio-font-meta
 
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+locale-gen en_US.UTF-8
+sudo dpkg-reconfigure locales
+
 # install adminpack for postgresql
 su -l -c "psql -c 'CREATE EXTENSION adminpack;'" - postgres
 
