@@ -21,6 +21,11 @@ server {
     proxy_pass http://127.0.0.1:20008;
   }
 
+  location /datasource/ {
+    proxy_set_header Host \$http_host;
+    proxy_pass http://127.0.0.1:20008;
+  }
+
   location / {
     proxy_set_header Host \$http_host;
     proxy_pass http://127.0.0.1:20009;
