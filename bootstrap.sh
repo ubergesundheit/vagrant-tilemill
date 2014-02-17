@@ -1,5 +1,5 @@
 apt-get install --yes python-software-properties
-echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' >> /etc/apt/sources.list.d/pgdg.list
+echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list
 wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
 yes | apt-add-repository ppa:developmentseed/mapbox
 yes | apt-add-repository ppa:nginx/stable
