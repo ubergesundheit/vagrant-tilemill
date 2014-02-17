@@ -17,7 +17,7 @@ server {
   listen 80;
   server_name localhost;
 
-  location /tiles/ {
+  location /tile/ {
     proxy_set_header Host \$http_host;
     proxy_pass http://127.0.0.1:20008;
   }
@@ -30,6 +30,13 @@ server {
 
 FOF
 
+tee /etc/tilemill/tilemill.config <<FOF
+{
+  "files": "/usr/share/mapbox",
+  "server": true,
+  "tileUrl": "192.168.33.10"
+}
+FOF
 
 service nginx restart
 
