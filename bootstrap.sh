@@ -4,7 +4,7 @@ wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo ap
 yes | apt-add-repository ppa:developmentseed/mapbox
 yes | apt-add-repository ppa:nginx/stable
 apt-get update --yes
-apt-get install --yes tilemill nginx-light postgresql-9.3-postgis-2.1 postgresql-contrib #fonts-cantarell lmodern ttf-aenigma ttf-georgewilliams ttf-bitstream-vera ttf-sjfonts ttf-tuffy tv-fonts ubuntustudio-font-meta
+apt-get install --yes tilemill nginx-light postgresql-9.3-postgis-2.1 postgresql-contrib fonts-cantarell lmodern ttf-aenigma ttf-georgewilliams ttf-bitstream-vera ttf-sjfonts ttf-tuffy tv-fonts ubuntustudio-font-meta
 
 tee /etc/nginx/sites-enabled/default <<FOF
 server {

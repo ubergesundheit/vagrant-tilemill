@@ -21,3 +21,17 @@ sudo apt-get install libprotobuf-c0-dev protobuf-c-compiler
 sed -i 's/-g -O2/-O2 -march=native -fomit-frame-pointer/' Makefile
 
 make
+sudo make install
+
+createuser gis
+psql -c "alter user gis with password 'gis';"
+createdb -T template_postgis -O gis gis
+
+local all all md5
+restart
+osm2pgsql -W -c -G -U gis -d gis muenster-regbez-latest.osm.pbf
+
+clone osm-bright
+do as it says
+
+remove first three things from .mml
